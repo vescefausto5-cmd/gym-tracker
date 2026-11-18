@@ -1,22 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>Gym Tracker</title>
     <meta name="description" content="Il tuo fitness tracker personale: allenamenti, cardio e progressi.">
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#16a34a">
+    <meta name="theme-color" id="meta-theme-color" content="#16a34a">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <!-- Compatibilità iPhone -->
+    <!-- Compatibilità iPhone / iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Gym Tracker">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
 
     <!-- Stili -->
     <link rel="stylesheet" href="style.css">
@@ -34,8 +34,8 @@
     </div>
 
     <div class="header-status">
-        <span class="status-dot"></span>
-        <span>Pronto ad allenarti</span>
+        <span class="status-dot" id="network-dot"></span>
+        <span id="network-status">Pronto ad allenarti</span>
     </div>
 </header>
 
@@ -81,15 +81,57 @@
             <span class="section-tag">FULL BODY</span>
         </div>
 
-        <div class="routine-selector">
-            <button class="routine-button active" data-routine="A">Scheda A</button>
-            <button class="routine-button" data-routine="B">Scheda B</button>
-            <button class="routine-button" data-routine="C">Scheda C</button>
+        <div class="routine-bar">
+            <div class="routine-selector">
+                <button class="routine-button active" data-routine="A">Scheda A</button>
+                <button class="routine-button" data-routine="B">Scheda B</button>
+                <button class="routine-button" data-routine="C">Scheda C</button>
+            </div>
+            <div class="routine-tools">
+                <button type="button" id="toggle-add-exercise" class="secondary-button accent-outline">+ Aggiungi esercizio</button>
+                <button type="button" id="reset-workout" class="secondary-button">Azzera serie</button>
+            </div>
+        </div>
+
+        <!-- PANNELLO AGGIUNTA ESERCIZIO CON AUTOCOMPLETAMENTO DATABASE -->
+        <div id="add-exercise-panel" class="panel add-exercise-panel hidden">
+            <div class="panel-heading">
+                <div>
+                    <h3>Aggiungi esercizio alla scheda</h3>
+                    <p>Cerca nel database o scrivi un nuovo esercizio: consigli e immagine verranno collegati in automatico</p>
+                </div>
+                <button type="button" id="close-add-exercise" class="icon-close-button" aria-label="Chiudi">✕</button>
+            </div>
+
+            <div class="add-exercise-grid">
+                <label class="full-col">Nome esercizio (scegli o digita)
+                    <input type="text" id="new-exercise-name" list="exercise-catalog-list" placeholder="Es. Panca piana, Croci ai cavi, Affondi, Leg Press...">
+                    <datalist id="exercise-catalog-list"></datalist>
+                </label>
+
+                <label>Serie
+                    <input type="number" id="new-exercise-sets" min="1" max="10" value="3">
+                </label>
+
+                <label>Ripetizioni target
+                    <input type="text" id="new-exercise-reps" value="10-12" placeholder="Es. 10-12">
+                </label>
+
+                <label>Gruppo muscolare (auto)
+                    <input type="text" id="new-exercise-muscles" placeholder="Compilato automaticamente...">
+                </label>
+            </div>
+
+            <div id="new-exercise-preview" class="db-match-preview"></div>
+
+            <div class="add-exercise-footer">
+                <button type="button" id="confirm-add-exercise" class="primary-button">Inserisci nella scheda</button>
+                <button type="button" id="restore-default-routine" class="secondary-button">Ripristina scheda originale</button>
+            </div>
         </div>
 
         <div id="routine-summary" class="routine-summary"></div>
 
-        <!-- I consigli e le guide saranno inseriti dal JavaScript -->
         <div id="workout-tips"></div>
 
         <div id="exercise-list" class="exercise-list"></div>
@@ -189,6 +231,23 @@
         <div class="panel">
             <div class="panel-heading">
                 <div>
+                    <h3>Progressione carichi</h3>
+                    <p>Carico massimo (kg) registrato per esercizio</p>
+                </div>
+                <select id="exercise-chart-select" class="chart-select" aria-label="Seleziona esercizio"></select>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="exercise-chart"></canvas>
+                <p id="exercise-empty" class="empty-message">
+                    Completa almeno un allenamento per vedere la progressione dei carichi.
+                </p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <div>
                     <h3>Andamento del peso</h3>
                     <p>Le tue rilevazioni nel tempo</p>
                 </div>
@@ -232,6 +291,20 @@
             <div>
                 <p class="eyebrow">IL TUO PERCORSO</p>
                 <h2>Storico allenamenti</h2>
+            </div>
+        </div>
+
+        <div class="panel backup-panel">
+            <div>
+                <h3>Backup dati</h3>
+                <p>Esporta o ripristina allenamenti, schede personalizzate, cardio e peso in JSON</p>
+            </div>
+            <div class="backup-actions">
+                <button type="button" id="export-backup" class="secondary-button">Esporta backup</button>
+                <label class="secondary-button file-label">
+                    Importa backup
+                    <input type="file" id="import-backup" accept="application/json" hidden>
+                </label>
             </div>
         </div>
 
