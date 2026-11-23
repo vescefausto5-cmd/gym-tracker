@@ -42,7 +42,7 @@ const ExerciseKnowledgeBase = {
         },
         "Panca piana": {
             muscles: "Pettorali, deltoidi anteriori e tricipiti",
-            keywords: ["panca piana", "bench press", "panca bilanciere", "panca manubri", "spinte manubri"],
+            keywords: ["panca piana", "bench press", "panca bilanciere", "panca piana bilanciere"],
             image: null, // Immagine da verificare prima della pubblicazione
             execution: "Sdraiati con gli occhi sotto il bilanciere, piedi ben piantati a terra e scapole addotte contro la panca. Scendi con controllo fino a sfiorare la linea dei capezzoli con i gomiti a 45° rispetto al busto, poi spingi verso l'alto.",
             mistakes: [
@@ -54,7 +54,7 @@ const ExerciseKnowledgeBase = {
         },
         "Croci ai cavi / Pectoral": {
             muscles: "Pettorali (isolamento)",
-            keywords: ["croci", "pectoral", "chest fly", "fly"],
+            keywords: ["croci ai cavi", "pectoral", "pec deck", "cable fly"],
             image: null, // Immagine da verificare prima della pubblicazione
             execution: "Mantieni i gomiti leggermente flessi con un angolo stabile durante tutta la ripetizione. Apri le braccia in modo controllato entro un'ampiezza confortevole, senza forzare le spalle indietro, poi richiudi davanti al petto.",
             mistakes: [
@@ -88,7 +88,7 @@ const ExerciseKnowledgeBase = {
         },
         "Leg Curl": {
             muscles: "Femorali",
-            keywords: ["leg curl", "femorali", "hamstring curl"],
+            keywords: ["leg curl", "hamstring curl"],
             image: "./assets/exercises/leg-curl.jpg",
             execution: "Allinea l'asse di rotazione della macchina con il ginocchio e posiziona il rullo appena sopra i talloni. Fletti le gambe portando i talloni verso i glutei e controlla il ritorno.",
             mistakes: [
@@ -99,7 +99,7 @@ const ExerciseKnowledgeBase = {
         },
         "Stacco rumeno con manubri": {
             muscles: "Femorali e glutei",
-            keywords: ["stacco rumeno", "rdl", "stacchi", "romanian deadlift"],
+            keywords: ["stacco rumeno", "stacco rumeno con manubri", "rdl manubri", "romanian deadlift dumbbells"],
             image: "./assets/exercises/rdl-dumbbells.jpg",
             execution: "In piedi con i manubri davanti alle cosce e ginocchia leggermente flesse, spingi il bacino indietro mantenendo la colonna in posizione neutra. Scendi fin dove riesci a mantenere questa posizione e senti lavorare la parte posteriore delle cosce; non è necessario raggiungere una quota fissa. Risali riportando il bacino in avanti senza inarcare la schiena.",
             mistakes: [
@@ -154,7 +154,7 @@ const ExerciseKnowledgeBase = {
         },
         "Shoulder Press": {
             muscles: "Spalle e tricipiti",
-            keywords: ["shoulder press", "lento avanti", "military press", "spinte spalle"],
+            keywords: ["shoulder press", "shoulder press macchina", "spinte spalle macchina"],
             image: null, // Immagine da verificare prima della pubblicazione
             execution: "Siediti con la schiena ben aderente allo schienale e le maniglie all'altezza delle orecchie. Spingi verso l'alto senza bloccare i gomiti e scendi con controllo.",
             mistakes: [
@@ -165,7 +165,7 @@ const ExerciseKnowledgeBase = {
         },
         "Hip Thrust": {
             muscles: "Glutei",
-            keywords: ["hip thrust", "ponte glutei", "glute bridge"],
+            keywords: ["hip thrust", "hip thrust con panca"],
             image: "./assets/exercises/hip-thrust.jpg",
             execution: "Appoggia la parte bassa delle scapole su una panca, piedi alla larghezza delle spalle. Spingi sui talloni sollevando il bacino fino a allineare cosce e busto, mantenendo il mento leggermente verso lo sterno.",
             mistakes: [
@@ -198,7 +198,7 @@ const ExerciseKnowledgeBase = {
         },
         "Curl bicipiti": {
             muscles: "Bicipiti",
-            keywords: ["curl", "bicipiti", "hammer curl", "curl bilanciere", "curl manubri"],
+            keywords: ["curl bicipiti", "curl bilanciere", "curl manubri"],
             image: "./assets/exercises/bicep-curl.jpg",
             execution: "In piedi con manubri o bilanciere, gomiti fermi lungo i fianchi. Fletti l'avambraccio portando il carico verso le spalle senza muovere i gomiti in avanti.",
             mistakes: [
@@ -242,7 +242,7 @@ const ExerciseKnowledgeBase = {
         },
         "Plank rialzato": {
             muscles: "Addome e core",
-            keywords: ["plank", "isometria"],
+            keywords: ["plank rialzato", "incline plank", "plank su panca"],
             image: null, // Immagine da verificare prima della pubblicazione
             execution: "Appoggia gli avambracci o le mani su una panca stabile, corpo in linea dalla testa ai talloni. Contrai forte glutei e addome mantenendo la respirazione regolare.",
             mistakes: [
