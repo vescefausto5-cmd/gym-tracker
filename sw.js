@@ -1,121 +1,88 @@
+
 /* =====================================
-   GYM TRACKER - SERVICE WORKER
-   Versione 3.1
+   GYM TRACKER - SERVICE WORKER v37
+   SUPPORTO OFFLINE
 ===================================== */
 
-const CACHE_NAME = "gym-tracker-v31";
+const CACHE_NAME = "gym-tracker-v37";
 
 const APP_FILES = [
     "./",
     "./index.html",
     "./style.css",
+    "./style.css?v=36",
     "./app.js",
     "./manifest.json"
 ];
 
-const OPTIONAL_ASSETS = [
-    "./assets/exercises/leg-press.jpg",
-    "./assets/exercises/chest-press.jpg",
-    "./assets/exercises/lat-machine.jpg",
-    "./assets/exercises/leg-curl.jpg",
-    "./assets/exercises/rdl-dumbbells.jpg",
-    "./assets/exercises/cable-row.jpg",
-    "./assets/exercises/lateral-raise.jpg",
-    "./assets/exercises/hip-thrust.jpg",
-    "./assets/exercises/tricep-pushdown.jpg",
-    "./assets/exercises/bicep-curl.jpg",
-    "./assets/icons/icon-192.png",
-    "./assets/icons/icon-512.png"
-];
-
-// INSTALLAZIONE
+// INSTALLAZIONE E CACHE INIZIALE
 self.addEventListener("install", event => {
     event.waitUntil(
-        (async () => {
-            const cache = await caches.open(CACHE_NAME);
-            await cache.addAll(APP_FILES);
-            // Pre-carica immagini e icone senza bloccare l'installazione se un file manca
-            await Promise.allSettled(
-                OPTIONAL_ASSETS.map(url => cache.add(url))
-            );
-            await self.skipWaiting();
-        })()
+        caches.open(CACHE_NAME).then(cache =>
+            cache.addAll(APP_FILES)
+        )
     );
+
+    self.skipWaiting();
 });
 
 // ATTIVAZIONE E PULIZIA VECCHIE CACHE
 self.addEventListener("activate", event => {
     event.waitUntil(
-        (async () => {
-            const keys = await caches.keys();
-
-            await Promise.all(
+        caches.keys().then(keys =>
+            Promise.all(
                 keys
                     .filter(key =>
                         key.startsWith("gym-tracker-") &&
                         key !== CACHE_NAME
                     )
                     .map(key => caches.delete(key))
-            );
-
-            await self.clients.claim();
-        })()
+            )
+        )
     );
+
+    self.clients.claim();
 });
 
-// GESTIONE RICHIESTE
+// GESTIONE DELLE RICHIESTE
 self.addEventListener("fetch", event => {
+
     const request = event.request;
 
+    // Solo richieste GET
     if (request.method !== "GET") return;
 
     const url = new URL(request.url);
 
-    // Non gestire richieste verso altri siti (es. future API cloud)
+    // Solo risorse della nostra applicazione
     if (url.origin !== self.location.origin) return;
 
-    // Pagine: prima rete, poi cache
-    if (request.mode === "navigate") {
-        event.respondWith(
-            (async () => {
-                try {
-                    const response = await fetch(request);
-
-                    if (response && response.ok) {
-                        const cache = await caches.open(CACHE_NAME);
-                        await cache.put("./index.html", response.clone());
-                    }
-
-                    return response;
-                } catch (error) {
-                    return (
-                        await caches.match("./index.html") ||
-                        await caches.match("./")
-                    );
-                }
-            })()
-        );
-
-        return;
-    }
-
-    // File statici e immagini: prima cache, poi rete
     event.respondWith(
-        (async () => {
-            const cached = await caches.match(request);
-
-            if (cached) return cached;
-
-            try {
-                const response = await fetch(request);
+        fetch(request)
+            .then(response => {
 
                 if (response && response.ok) {
-                    const cache = await caches.open(CACHE_NAME);
-                    await cache.put(request, response.clone());
+                    const copy = response.clone();
+
+                    caches.open(CACHE_NAME).then(cache => {
+                        cache.put(request, copy);
+                    });
                 }
 
                 return response;
-            } catch (error) {
+            })
+            .catch(async () => {
+
+                const cached = await caches.match(request);
+
+                if (cached) return cached;
+
+                // Se non troviamo la pagina richiesta,
+                // restituiamo la schermata principale.
+                if (request.mode === "navigate") {
+                    return await caches.match("./index.html");
+                }
+
                 return new Response(
                     "Risorsa non disponibile offline",
                     {
@@ -125,7 +92,6 @@ self.addEventListener("fetch", event => {
                         }
                     }
                 );
-            }
-        })()
+            })
     );
 });
