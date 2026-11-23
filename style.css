@@ -946,3 +946,20 @@ footer {
         width: 100%;
     }
 }
+/* Contrasto garantito per i consigli pratici in ogni tema e modalità iOS. */
+.exercise-guide .training-tip {
+    background: #dcfce7 !important;
+    border: 1px solid #86bfa0;
+    color: #14532d !important;
+}
+.exercise-guide .training-tip strong {
+    color: #14532d !important;
+    font-size: 14px;
+}
+.exercise-guide .training-tip p {
+    color: #17221b !important;
+    -webkit-text-fill-color: #17221b;
+    opacity: 1 !important;
+    font-size: 14px;
+    line-height: 1.6;
+}
