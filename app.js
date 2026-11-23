@@ -521,7 +521,7 @@ function createExerciseGuideElement(exerciseName) {
     const summary = document.createElement("summary");
     summary.textContent = guide.matchedName && !guide.exact
         ? `Guida tecnica (riferimento: ${guide.matchedName})`
-        : "Guida esecuzione, immagine e consigli";
+        : guide.image ? "Guida esecuzione, immagine e consigli" : "Guida esecuzione e consigli";
     details.appendChild(summary);
 
     if (guide.image) {
