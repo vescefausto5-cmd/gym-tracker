@@ -3,7 +3,7 @@
    CACHE OFFLINE COMPLETA
 ===================================== */
 
-const CACHE_NAME = "gym-tracker-v39";
+const CACHE_NAME = "gym-tracker-v40";
 
 const APP_FILES = [
     "./",
@@ -54,8 +54,10 @@ self.addEventListener("fetch", event => {
     if (url.origin !== self.location.origin) return;
 
     event.respondWith((async () => {
+        const isAppShell = request.mode === "navigate" ||
+            /\/(?:index\.html|app\.js|style\.css|manifest\.json|sw\.js)$/.test(url.pathname);
         const cached = await caches.match(request);
-        if (cached) return cached;
+        if (!isAppShell && cached) return cached;
 
         try {
             const response = await fetch(request);
@@ -65,6 +67,7 @@ self.addEventListener("fetch", event => {
             }
             return response;
         } catch {
+            if (cached) return cached;
             if (request.mode === "navigate") {
                 return (await caches.match("./index.html")) ||
                     new Response("Gym Tracker non disponibile offline.", {
