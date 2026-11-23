@@ -4,15 +4,19 @@
    SUPPORTO OFFLINE
 ===================================== */
 
-const CACHE_NAME = "gym-tracker-v37";
+const CACHE_NAME = "gym-tracker-v38";
 
 const APP_FILES = [
+   const APP_FILES = [
     "./",
     "./index.html",
     "./style.css",
     "./style.css?v=36",
     "./app.js",
-    "./manifest.json"
+    "./manifest.json",
+    "./assets/icons/icon-192.png",
+    "./assets/icons/icon-512.png",
+    "./assets/icons/apple-touch-icon.png"
 ];
 
 // INSTALLAZIONE E CACHE INIZIALE
