@@ -9,7 +9,7 @@ const ExerciseKnowledgeBase = {
             muscles: "Quadricipiti e glutei",
             keywords: ["leg press", "pressa", "pressa gambe"],
             image: "./assets/exercises/leg-press.jpg",
-            execution: "Posiziona i piedi alla larghezza delle spalle al centro della pedana. Sblocca il carrello, scendi controllando il carico fino a portare le ginocchia a circa 90° senza staccare il bacino dallo schienale, poi spingi sul centro del piede senza bloccare completamente le ginocchia in cima.",
+            execution: "Posiziona i piedi in modo stabile sulla pedana, in genere circa alla larghezza delle spalle. Sblocca il carrello e scendi solo fin dove riesci a mantenere bacino e schiena appoggiati allo schienale, senza dolore né cedimenti. Spingi attraverso tutto il piede e termina senza forzare il blocco delle ginocchia. La profondità dipende dalla macchina e dalla tua mobilità.",
             mistakes: [
                 "Sollevare i glutei o la zona lombare a fine discesa",
                 "Far collassare le ginocchia verso l'interno durante la spinta",
@@ -56,7 +56,7 @@ const ExerciseKnowledgeBase = {
             muscles: "Pettorali (isolamento)",
             keywords: ["croci", "pectoral", "chest fly", "fly"],
             image: "./assets/exercises/chest-press.jpg",
-            execution: "Con gomiti leggermente flessi e bloccati, apri le braccia fino a sentire un buon allungamento sul petto senza superare la linea delle spalle, poi richiudi avvicinando gli omeri davanti allo sterno.",
+            execution: "Mantieni i gomiti leggermente flessi con un angolo stabile durante tutta la ripetizione. Apri le braccia in modo controllato entro un'ampiezza confortevole, senza forzare le spalle indietro, poi richiudi davanti al petto.",
             mistakes: [
                 "Piegare e stendere i gomiti trasformandolo in una spinta",
                 "Portare le braccia troppo indietro forzando la capsula della spalla"
@@ -65,7 +65,7 @@ const ExerciseKnowledgeBase = {
         },
         "Lat Machine": {
             muscles: "Dorsali e bicipiti",
-            keywords: ["lat machine", "lat pulldown", "trazioni"],
+            keywords: ["lat machine", "lat pulldown", "pulldown alla lat machine"],
             image: "./assets/exercises/lat-machine.jpg",
             execution: "Afferra la barra poco oltre la larghezza delle spalle. Blocca le cosce sotto i cuscinetti, deprimi le scapole e tira la barra verso la parte alta del petto inclinando leggermente il busto indietro.",
             mistakes: [
@@ -101,7 +101,7 @@ const ExerciseKnowledgeBase = {
             muscles: "Femorali e glutei",
             keywords: ["stacco rumeno", "rdl", "stacchi", "romanian deadlift"],
             image: "./assets/exercises/rdl-dumbbells.jpg",
-            execution: "In piedi con i manubri davanti alle cosce e ginocchia leggermente sbloccate, spingi il bacino indietro mantenendo la schiena neutra fino a portare i manubri sotto le ginocchia, poi risali contraendo i glutei.",
+            execution: "In piedi con i manubri davanti alle cosce e ginocchia leggermente flesse, spingi il bacino indietro mantenendo la colonna in posizione neutra. Scendi fin dove riesci a mantenere questa posizione e senti lavorare la parte posteriore delle cosce; non è necessario raggiungere una quota fissa. Risali riportando il bacino in avanti senza inarcare la schiena.",
             mistakes: [
                 "Curvare la zona lombare in discesa",
                 "Piegare eccessivamente le ginocchia trasformandolo in uno squat"
@@ -110,7 +110,7 @@ const ExerciseKnowledgeBase = {
         },
         "Machine Row": {
             muscles: "Dorsali e parte centrale della schiena",
-            keywords: ["machine row", "row", "rematore macchina"],
+            keywords: ["machine row", "rematore macchina"],
             image: "./assets/exercises/cable-row.jpg",
             execution: "Appoggia bene il petto al supporto, afferra le maniglie e tira i gomiti indietro avvicinando le scapole tra loro. Mantieni il busto fermo.",
             mistakes: [
@@ -132,7 +132,7 @@ const ExerciseKnowledgeBase = {
         },
         "Cable Row": {
             muscles: "Dorsali e schiena",
-            keywords: ["cable row", "pulley", "rematore cavo", "rematore manubrio"],
+            keywords: ["cable row", "pulley", "rematore al cavo", "rematore cavo"],
             image: "./assets/exercises/cable-row.jpg",
             execution: "Seduto al pulley basso con ginocchia leggermente flesse, mantieni la colonna neutra e porta la maniglia verso l'addome avvicinando le scapole.",
             mistakes: [
@@ -143,7 +143,7 @@ const ExerciseKnowledgeBase = {
         },
         "Alzate laterali": {
             muscles: "Deltoide laterale",
-            keywords: ["alzate laterali", "lateral raise", "spalle laterali", "alzate frontali"],
+            keywords: ["alzate laterali", "lateral raise", "spalle laterali"],
             image: "./assets/exercises/lateral-raise.jpg",
             execution: "In piedi con i manubri lungo i fianchi e gomiti leggermente flessi, solleva le braccia lateralmente fino all'altezza delle spalle guidando il movimento con i gomiti.",
             mistakes: [
@@ -172,11 +172,11 @@ const ExerciseKnowledgeBase = {
                 "Iperestendere la schiena in cima al movimento",
                 "Spingere sulle punte dei piedi anziché sui talloni"
             ],
-            tip: "Guarda sempre avanti verso il muro davanti a te, mai verso il soffitto."
+            tip: "Mantieni il collo comodo e in linea con il busto; evita di iperestendere la zona lombare in chiusura."
         },
         "Hack Squat / Leg Press": {
             muscles: "Quadricipiti e glutei",
-            keywords: ["hack squat", "squat", "affondi", "bulgarian"],
+            keywords: ["hack squat", "hack squat machine"],
             image: "./assets/exercises/leg-press.jpg",
             execution: "Appoggia saldamente spalle e schiena ai cuscinetti, piedi alla larghezza delle spalle. Scendi in modo fluido fino a rompere il parallelo se la mobilità lo consente, poi spingi in modo uniforme.",
             mistakes: [
@@ -189,7 +189,7 @@ const ExerciseKnowledgeBase = {
             muscles: "Quadricipiti",
             keywords: ["leg extension", "estensioni gambe"],
             image: "./assets/exercises/leg-press.jpg",
-            execution: "Allinea le ginocchia con il perno della macchina, regola il rullo sopra le caviglie e distendi completamente le gambe contraendo i quadricipiti per 1 secondo.",
+            execution: "Regola la macchina in modo che il perno sia allineato con l'articolazione del ginocchio e il rullo appoggi sulla parte bassa della tibia, sopra la caviglia. Estendi le ginocchia in modo controllato entro un'ampiezza confortevole, senza scatti né blocco forzato, poi ritorna lentamente.",
             mistakes: [
                 "Dare uno strattone iniziale con i fianchi",
                 "Scendere troppo velocemente"
@@ -209,9 +209,9 @@ const ExerciseKnowledgeBase = {
         },
         "Pushdown tricipiti": {
             muscles: "Tricipiti",
-            keywords: ["pushdown", "tricipiti", "french press", "estensioni tricipiti", "dip"],
+            keywords: ["pushdown", "tricipiti al cavo", "estensioni tricipiti al cavo"],
             image: "./assets/exercises/tricep-pushdown.jpg",
-            execution: "Al cavo alto, blocca i gomiti ai lati del busto. Spingi la barra o la corda verso il basso fino a distendere completamente le braccia, poi risali fino a 90°.",
+            execution: "Al cavo alto, mantieni i gomiti vicini ai fianchi e relativamente fermi. Spingi la barra o la corda verso il basso estendendo i gomiti in modo controllato, senza forzare il blocco articolare; ritorna lentamente finché l'avambraccio è nuovamente flesso in modo confortevole.",
             mistakes: [
                 "Allargare i gomiti o portarli avanti e indietro",
                 "Appoggiarsi con il peso del corpo sopra la maniglia"
@@ -220,7 +220,7 @@ const ExerciseKnowledgeBase = {
         },
         "Pallof Press": {
             muscles: "Addome e core",
-            keywords: ["pallof", "core", "crunch", "addominali", "abs"],
+            keywords: ["pallof", "pallof press", "anti-rotazione al cavo"],
             image: "./assets/exercises/cable-row.jpg",
             execution: "Posizionati lateralmente rispetto al cavo regolato all'altezza dello sterno. Afferra la maniglia con entrambe le mani al centro del petto, distendi completamente le braccia in avanti resistendo alla rotazione del busto e ritorna.",
             mistakes: [
@@ -231,9 +231,9 @@ const ExerciseKnowledgeBase = {
         },
         "Dead Bug": {
             muscles: "Addome e core",
-            keywords: ["dead bug", "bird dog"],
+            keywords: ["dead bug"],
             image: "./assets/exercises/hip-thrust.jpg",
-            execution: "Sdraiato supino con braccia tese verso il soffitto e gambe a 90° (tavolino), schiaccia la zona lombare a terra. Distendi lentamente braccio destro e gamba sinistra senza staccare la schiena, poi alterna.",
+            execution: "Sdraiati supino con braccia rivolte verso il soffitto e anche e ginocchia flesse. Mantieni il tronco stabile e abbassa lentamente un braccio e la gamba opposta solo fin dove riesci a controllare il bacino e la zona lombare. Ritorna e alterna i lati; riduci l'ampiezza se perdi il controllo.",
             mistakes: [
                 "Creare spazio tra la bassa schiena e il pavimento",
                 "Eseguire il movimento troppo velocemente"
@@ -254,23 +254,22 @@ const ExerciseKnowledgeBase = {
     },
 
     find(exerciseName) {
-        if (!exerciseName) return null;
-        const clean = exerciseName.trim();
-        const lower = clean.toLowerCase();
+        if (!exerciseName || typeof exerciseName !== "string") return null;
+        const normalize = value => value
+            .toLocaleLowerCase("it")
+            .normalize("NFD")
+            .replace(/[\\u0300-\\u036f]/g, "")
+            .replace(/[^a-z0-9]+/g, " ")
+            .trim()
+            .replace(/\\s+/g, " ");
+        const clean = normalize(exerciseName);
 
+        // Mostra una guida solo se il nome completo coincide con un esercizio
+        // o con un alias esplicito. Evita abbinamenti parziali fuorvianti.
         for (const [key, data] of Object.entries(this.catalog)) {
-            if (key.toLowerCase() === lower) {
-                return { matchedName: key, exact: true, ...data };
-            }
-        }
-
-        for (const [key, data] of Object.entries(this.catalog)) {
-            if (
-                key.toLowerCase().includes(lower) ||
-                lower.includes(key.toLowerCase()) ||
-                (data.keywords || []).some(kw => lower.includes(kw))
-            ) {
-                return { matchedName: key, exact: false, ...data };
+            const candidates = [key, ...(data.keywords || [])].map(normalize);
+            if (candidates.includes(clean)) {
+                return { matchedName: key, exact: key === exerciseName.trim(), ...data };
             }
         }
 
