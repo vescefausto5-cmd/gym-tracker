@@ -32,7 +32,7 @@ const ExerciseKnowledgeBase = {
         "Chest Press inclinata": {
             muscles: "Pettorali superiori e tricipiti",
             keywords: ["chest press inclinata", "incline press", "petto alto"],
-            image: "./assets/exercises/chest-press.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Imposta il sedile affinché l'impugnatura punti verso la parte superiore del petto (clavicole). Mantieni le scapole addotte, spingi verso l'alto e controlla la discesa.",
             mistakes: [
                 "Perdere l'assetto delle scapole a fine spinta",
@@ -43,7 +43,7 @@ const ExerciseKnowledgeBase = {
         "Panca piana": {
             muscles: "Pettorali, deltoidi anteriori e tricipiti",
             keywords: ["panca piana", "bench press", "panca bilanciere", "panca manubri", "spinte manubri"],
-            image: "./assets/exercises/chest-press.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Sdraiati con gli occhi sotto il bilanciere, piedi ben piantati a terra e scapole addotte contro la panca. Scendi con controllo fino a sfiorare la linea dei capezzoli con i gomiti a 45° rispetto al busto, poi spingi verso l'alto.",
             mistakes: [
                 "Aprire i gomiti a 90° mettendo stress sulle spalle",
@@ -55,7 +55,7 @@ const ExerciseKnowledgeBase = {
         "Croci ai cavi / Pectoral": {
             muscles: "Pettorali (isolamento)",
             keywords: ["croci", "pectoral", "chest fly", "fly"],
-            image: "./assets/exercises/chest-press.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Mantieni i gomiti leggermente flessi con un angolo stabile durante tutta la ripetizione. Apri le braccia in modo controllato entro un'ampiezza confortevole, senza forzare le spalle indietro, poi richiudi davanti al petto.",
             mistakes: [
                 "Piegare e stendere i gomiti trasformandolo in una spinta",
@@ -78,7 +78,7 @@ const ExerciseKnowledgeBase = {
         "Lat Machine presa neutra": {
             muscles: "Dorsali e bicipiti",
             keywords: ["lat machine presa neutra", "lat triangolo", "presa parallela"],
-            image: "./assets/exercises/lat-machine.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Usa il triangolo o la barra parallela con palmi rivolti l'uno verso l'altro. Tira l'impugnatura verso la parte bassa dello sterno mantenendo i gomiti stretti.",
             mistakes: [
                 "Tirare solo con i bicipiti arrotondando le spalle",
@@ -111,7 +111,7 @@ const ExerciseKnowledgeBase = {
         "Machine Row": {
             muscles: "Dorsali e parte centrale della schiena",
             keywords: ["machine row", "rematore macchina"],
-            image: "./assets/exercises/cable-row.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Appoggia bene il petto al supporto, afferra le maniglie e tira i gomiti indietro avvicinando le scapole tra loro. Mantieni il busto fermo.",
             mistakes: [
                 "Staccare il petto dal cuscino per aiutarsi con la schiena",
@@ -122,7 +122,7 @@ const ExerciseKnowledgeBase = {
         "Low Row": {
             muscles: "Dorsali e romboidi",
             keywords: ["low row", "rematore basso"],
-            image: "./assets/exercises/cable-row.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Siediti con la schiena dritta, afferra la maniglia bassa e tira verso l'ombelico mantenendo i gomiti vicini al corpo e le spalle basse.",
             mistakes: [
                 "Inclinarsi eccessivamente in avanti e indietro",
@@ -155,7 +155,7 @@ const ExerciseKnowledgeBase = {
         "Shoulder Press": {
             muscles: "Spalle e tricipiti",
             keywords: ["shoulder press", "lento avanti", "military press", "spinte spalle"],
-            image: "./assets/exercises/lateral-raise.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Siediti con la schiena ben aderente allo schienale e le maniglie all'altezza delle orecchie. Spingi verso l'alto senza bloccare i gomiti e scendi con controllo.",
             mistakes: [
                 "Inarcare la schiena staccandola dallo schienale",
@@ -177,7 +177,7 @@ const ExerciseKnowledgeBase = {
         "Hack Squat / Leg Press": {
             muscles: "Quadricipiti e glutei",
             keywords: ["hack squat", "hack squat machine"],
-            image: "./assets/exercises/leg-press.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Appoggia saldamente spalle e schiena ai cuscinetti, piedi alla larghezza delle spalle. Scendi in modo fluido fino a rompere il parallelo se la mobilità lo consente, poi spingi in modo uniforme.",
             mistakes: [
                 "Alzare i talloni dalla pedana",
@@ -188,7 +188,7 @@ const ExerciseKnowledgeBase = {
         "Leg Extension": {
             muscles: "Quadricipiti",
             keywords: ["leg extension", "estensioni gambe"],
-            image: "./assets/exercises/leg-press.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Regola la macchina in modo che il perno sia allineato con l'articolazione del ginocchio e il rullo appoggi sulla parte bassa della tibia, sopra la caviglia. Estendi le ginocchia in modo controllato entro un'ampiezza confortevole, senza scatti né blocco forzato, poi ritorna lentamente.",
             mistakes: [
                 "Dare uno strattone iniziale con i fianchi",
@@ -221,7 +221,7 @@ const ExerciseKnowledgeBase = {
         "Pallof Press": {
             muscles: "Addome e core",
             keywords: ["pallof", "pallof press", "anti-rotazione al cavo"],
-            image: "./assets/exercises/cable-row.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Posizionati lateralmente rispetto al cavo regolato all'altezza dello sterno. Afferra la maniglia con entrambe le mani al centro del petto, distendi completamente le braccia in avanti resistendo alla rotazione del busto e ritorna.",
             mistakes: [
                 "Lasciare che il cavo ruoti il tronco o le spalle",
@@ -232,7 +232,7 @@ const ExerciseKnowledgeBase = {
         "Dead Bug": {
             muscles: "Addome e core",
             keywords: ["dead bug"],
-            image: "./assets/exercises/hip-thrust.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Sdraiati supino con braccia rivolte verso il soffitto e anche e ginocchia flesse. Mantieni il tronco stabile e abbassa lentamente un braccio e la gamba opposta solo fin dove riesci a controllare il bacino e la zona lombare. Ritorna e alterna i lati; riduci l'ampiezza se perdi il controllo.",
             mistakes: [
                 "Creare spazio tra la bassa schiena e il pavimento",
@@ -243,7 +243,7 @@ const ExerciseKnowledgeBase = {
         "Plank rialzato": {
             muscles: "Addome e core",
             keywords: ["plank", "isometria"],
-            image: "./assets/exercises/hip-thrust.jpg",
+            image: null, // Immagine da verificare prima della pubblicazione
             execution: "Appoggia gli avambracci o le mani su una panca stabile, corpo in linea dalla testa ai talloni. Contrai forte glutei e addome mantenendo la respirazione regolare.",
             mistakes: [
                 "Lasciar cadere il bacino verso il basso",
@@ -276,15 +276,11 @@ const ExerciseKnowledgeBase = {
         return {
             matchedName: null,
             exact: false,
-            muscles: "Gruppo muscolare personalizzato",
+            muscles: "Esercizio non riconosciuto",
             image: null,
-            execution: "Imposta la postura neutra della colonna prima di iniziare. Esegui la fase concentrica (spinta o tirata) in modo esplosivo ma controllato in 1 secondo, e frena il ritorno (fase eccentrica) per 2-3 secondi mantenendo tensione continua.",
-            mistakes: [
-                "Usare slanci del busto per compensare un carico eccessivo",
-                "Ridurre l'ampiezza del movimento (ROM) nelle ripetizioni finali",
-                "Trattenere il respiro durante lo sforzo"
-            ],
-            tip: "Scegli un carico che ti permetta di completare tutte le ripetizioni con tecnica pulita lasciando 1-2 ripetizioni di margine."
+            execution: "Non è ancora disponibile una guida verificata per questo esercizio. Controlla il nome esatto e chiedi a un istruttore qualificato di mostrarti il movimento prima di eseguirlo.",
+            mistakes: [],
+            tip: "Non usare le istruzioni di un esercizio simile come sostituto della tecnica specifica."
         };
     }
 };
