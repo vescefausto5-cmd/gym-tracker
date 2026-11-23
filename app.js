@@ -27,13 +27,13 @@ const ExerciseKnowledgeBase = {
                 "Staccare le scapole dallo schienale in chiusura",
                 "Aprire i gomiti a 90° rispetto al busto"
             ],
-            tip: "Tieni i gomiti leggermente più bassi delle spalle (circa 45-60°) per proteggere l'articolazione."
+            tip: "Scegli una traiettoria confortevole per spalle e gomiti, rispettando la geometria della macchina; evita di forzare un angolo fisso."
         },
         "Chest Press inclinata": {
             muscles: "Pettorali superiori e tricipiti",
             keywords: ["chest press inclinata", "incline press", "petto alto"],
             image: null, // Immagine da verificare prima della pubblicazione
-            execution: "Imposta il sedile affinché l'impugnatura punti verso la parte superiore del petto (clavicole). Mantieni le scapole addotte, spingi verso l'alto e controlla la discesa.",
+            execution: "Regola sedile e schienale secondo la traiettoria prevista dalla macchina, con impugnature in posizione confortevole rispetto alla parte alta del petto. Mantieni il tronco stabile, spingi senza forzare il blocco dei gomiti e torna lentamente, evitando dolore alle spalle.",
             mistakes: [
                 "Perdere l'assetto delle scapole a fine spinta",
                 "Rimbalzare nella parte bassa del movimento"
@@ -44,7 +44,7 @@ const ExerciseKnowledgeBase = {
             muscles: "Pettorali, deltoidi anteriori e tricipiti",
             keywords: ["panca piana", "bench press", "panca bilanciere", "panca piana bilanciere"],
             image: null, // Immagine da verificare prima della pubblicazione
-            execution: "Sdraiati con gli occhi sotto il bilanciere, piedi ben piantati a terra e scapole addotte contro la panca. Scendi con controllo fino a sfiorare la linea dei capezzoli con i gomiti a 45° rispetto al busto, poi spingi verso l'alto.",
+            execution: "Sdraiati con piedi stabili, glutei sulla panca e scapole stabilizzate. Usa un'impugnatura che mantenga polsi e avambracci allineati. Abbassa il bilanciere in modo controllato verso una zona confortevole del petto, senza rimbalzi, poi spingi mantenendo il controllo. Per carichi impegnativi usa supporti di sicurezza o uno spotter competente.",
             mistakes: [
                 "Aprire i gomiti a 90° mettendo stress sulle spalle",
                 "Sollevare i glutei dalla panca durante la spinta",
@@ -79,12 +79,12 @@ const ExerciseKnowledgeBase = {
             muscles: "Dorsali e bicipiti",
             keywords: ["lat machine presa neutra", "lat triangolo", "presa parallela"],
             image: null, // Immagine da verificare prima della pubblicazione
-            execution: "Usa il triangolo o la barra parallela con palmi rivolti l'uno verso l'altro. Tira l'impugnatura verso la parte bassa dello sterno mantenendo i gomiti stretti.",
+            execution: "Usa un'impugnatura neutra con i palmi rivolti uno verso l'altro. Tieni le cosce sotto i fermi e porta l'impugnatura verso la parte anteriore alta del torace, secondo la geometria dell'attrezzo, mantenendo il busto stabile e i gomiti orientati verso il basso.",
             mistakes: [
                 "Tirare solo con i bicipiti arrotondando le spalle",
                 "Dondolare eccessivamente con il tronco"
             ],
-            tip: "Ottima variante per enfatizzare il gran dorsale nella parte bassa."
+            tip: "Mantieni una presa comoda e non inclinare eccessivamente il busto per raggiungere il torace con l'impugnatura."
         },
         "Leg Curl": {
             muscles: "Femorali",
@@ -95,7 +95,7 @@ const ExerciseKnowledgeBase = {
                 "Sollevare il bacino dal cuscino durante la contrazione",
                 "Lasciare cadere il peso nella fase di ritorno"
             ],
-            tip: "Mantieni le punte dei piedi a martello (verso le tibie) per attivare meglio i femorali."
+            tip: "Mantieni caviglie e piedi in una posizione comoda e stabile, senza forzare la dorsiflessione."
         },
         "Stacco rumeno con manubri": {
             muscles: "Femorali e glutei",
@@ -145,10 +145,10 @@ const ExerciseKnowledgeBase = {
             muscles: "Deltoide laterale",
             keywords: ["alzate laterali", "lateral raise", "spalle laterali"],
             image: "./assets/exercises/lateral-raise.jpg",
-            execution: "In piedi con i manubri lungo i fianchi e gomiti leggermente flessi, solleva le braccia lateralmente fino all'altezza delle spalle guidando il movimento con i gomiti.",
+            execution: "In piedi con manubri leggeri e gomiti leggermente flessi, solleva le braccia lateralmente nel piano più confortevole per le spalle. Fermati all'altezza che controlli senza dolore o compensi del busto.",
             mistakes: [
                 "Dondolare con il busto per slanciare i manubri",
-                "Salire oltre la linea delle spalle attivando eccessivamente i trapezi"
+                "Alzare le spalle verso le orecchie o forzare un'ampiezza dolorosa"
             ],
             tip: "Immagina di allontanare i manubri dalle pareti invece di sollevarli verso l'alto."
         },
@@ -156,7 +156,7 @@ const ExerciseKnowledgeBase = {
             muscles: "Spalle e tricipiti",
             keywords: ["shoulder press", "shoulder press macchina", "spinte spalle macchina"],
             image: null, // Immagine da verificare prima della pubblicazione
-            execution: "Siediti con la schiena ben aderente allo schienale e le maniglie all'altezza delle orecchie. Spingi verso l'alto senza bloccare i gomiti e scendi con controllo.",
+            execution: "Regola il sedile della shoulder press in modo che le impugnature siano raggiungibili senza forzare le spalle. Mantieni tronco e bacino stabili, spingi lungo la traiettoria della macchina e ritorna lentamente entro un'ampiezza confortevole.",
             mistakes: [
                 "Inarcare la schiena staccandola dallo schienale",
                 "Portare i gomiti troppo indietro rispetto al piano delle scapole"
@@ -178,7 +178,7 @@ const ExerciseKnowledgeBase = {
             muscles: "Quadricipiti e glutei",
             keywords: ["hack squat", "hack squat machine"],
             image: null, // Immagine da verificare prima della pubblicazione
-            execution: "Appoggia saldamente spalle e schiena ai cuscinetti, piedi alla larghezza delle spalle. Scendi in modo fluido fino a rompere il parallelo se la mobilità lo consente, poi spingi in modo uniforme.",
+            execution: "Sulla macchina hack squat, appoggia schiena e spalle ai supporti e posiziona i piedi stabilmente sulla pedana. Scendi solo fin dove riesci a mantenere talloni appoggiati e bacino controllato, senza dolore. Risali spingendo con tutto il piede, senza bloccare forzatamente le ginocchia.",
             mistakes: [
                 "Alzare i talloni dalla pedana",
                 "Staccare la zona lombare dallo schienale in buca"
@@ -233,9 +233,9 @@ const ExerciseKnowledgeBase = {
             muscles: "Addome e core",
             keywords: ["dead bug"],
             image: null, // Immagine da verificare prima della pubblicazione
-            execution: "Sdraiati supino con braccia rivolte verso il soffitto e anche e ginocchia flesse. Mantieni il tronco stabile e abbassa lentamente un braccio e la gamba opposta solo fin dove riesci a controllare il bacino e la zona lombare. Ritorna e alterna i lati; riduci l'ampiezza se perdi il controllo.",
+            execution: "Sdraiati supino con braccia rivolte verso il soffitto e anche e ginocchia flesse. Mantieni il tronco stabile e abbassa lentamente un braccio e la gamba opposta solo fin dove riesci a controllare il bacino e la posizione lombare senza dolore. Ritorna e alterna i lati; riduci l'ampiezza se perdi il controllo.",
             mistakes: [
-                "Creare spazio tra la bassa schiena e il pavimento",
+                "Perdere il controllo della posizione lombare durante l'allungamento",
                 "Eseguire il movimento troppo velocemente"
             ],
             tip: "Espira lentamente mentre allunghi braccio e gamba."
