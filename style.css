@@ -415,7 +415,7 @@ button {
     padding: 14px 16px;
     margin-bottom: 18px;
     font-size: 13px;
-    color: var(--muted);
+    color: var(--text);
     line-height: 1.5;
 }
 
@@ -817,9 +817,22 @@ footer {
 
 .training-tip p {
     margin: 0;
-    color: var(--text);
+    color: #17221b;
     font-size: 12px;
     line-height: 1.5;
+}
+
+/* Contrasto leggibile anche quando il dispositivo usa il tema scuro */
+@media (prefers-color-scheme: dark) {
+    .training-tip {
+        background: #26352b;
+        color: #d7f7df;
+        border: 1px solid #3d5945;
+    }
+
+    .training-tip p {
+        color: #edf5ef;
+    }
 }
 
 .routine-progress {
