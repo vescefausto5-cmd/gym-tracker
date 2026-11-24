@@ -119,7 +119,7 @@ const ExerciseKnowledgeBase = {
         "Machine Row": {
             muscles: "Dorsali e parte centrale della schiena",
             keywords: ["machine row", "rematore macchina"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/machine-row.jpg",
             execution: "Appoggia bene il petto al supporto, afferra le maniglie e tira i gomiti indietro avvicinando le scapole tra loro. Mantieni il busto fermo.",
             mistakes: [
                 "Staccare il petto dal cuscino per aiutarsi con la schiena",
@@ -130,7 +130,7 @@ const ExerciseKnowledgeBase = {
         "Low Row": {
             muscles: "Dorsali e romboidi",
             keywords: ["low row", "rematore basso"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/low-row.jpg",
             execution: "Siediti con la schiena dritta, afferra la maniglia bassa e tira verso l'ombelico mantenendo i gomiti vicini al corpo e le spalle basse.",
             mistakes: [
                 "Inclinarsi eccessivamente in avanti e indietro",
