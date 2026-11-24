@@ -32,7 +32,7 @@ const ExerciseKnowledgeBase = {
         "Chest Press inclinata": {
             muscles: "Pettorali superiori e tricipiti",
             keywords: ["chest press inclinata", "incline press", "petto alto"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/chest-press-inclinata.jpg",
             execution: "Regola sedile e schienale secondo la traiettoria prevista dalla macchina, con impugnature in posizione confortevole rispetto alla parte alta del petto. Mantieni il tronco stabile, spingi senza forzare il blocco dei gomiti e torna lentamente, evitando dolore alle spalle.",
             mistakes: [
                 "Perdere l'assetto delle scapole a fine spinta",
@@ -43,7 +43,7 @@ const ExerciseKnowledgeBase = {
         "Panca piana": {
             muscles: "Pettorali, deltoidi anteriori e tricipiti",
             keywords: ["panca piana", "bench press", "panca bilanciere", "panca piana bilanciere"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/panca-piana.jpg",
             execution: "Sdraiati con piedi stabili, glutei sulla panca e scapole stabilizzate. Usa un'impugnatura che mantenga polsi e avambracci allineati. Abbassa il bilanciere in modo controllato verso una zona confortevole del petto, senza rimbalzi, poi spingi mantenendo il controllo. Per carichi impegnativi usa supporti di sicurezza o uno spotter competente.",
             mistakes: [
                 "Aprire i gomiti a 90° mettendo stress sulle spalle",
@@ -52,16 +52,24 @@ const ExerciseKnowledgeBase = {
             ],
             tip: "Immagina di spezzare il bilanciere con le mani per attivare i dorsali e stabilizzare le spalle."
         },
-        "Croci ai cavi / Pectoral": {
+        "Croci ai cavi": {
             muscles: "Pettorali (isolamento)",
-            keywords: ["croci ai cavi", "pectoral", "pec deck", "cable fly"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            keywords: ["croci ai cavi", "cable fly"],
+            image: "./assets/exercises/croci-cavi.jpg",
             execution: "Mantieni i gomiti leggermente flessi con un angolo stabile durante tutta la ripetizione. Apri le braccia in modo controllato entro un'ampiezza confortevole, senza forzare le spalle indietro, poi richiudi davanti al petto.",
             mistakes: [
                 "Piegare e stendere i gomiti trasformandolo in una spinta",
                 "Portare le braccia troppo indietro forzando la capsula della spalla"
             ],
             tip: "Concentrati sull'avvicinare i gomiti tra loro, non solo le mani."
+        },
+        "Croci ai cavi / Pectoral": {
+            muscles: "Pettorali (isolamento)",
+            keywords: [],
+            image: null, // Immagine da verificare prima della pubblicazione
+            execution: "Pectoral e pec deck sono varianti su macchina: non usare la figura dei cavi per regolarle. Se usi i cavi, consulta la guida Croci ai cavi.",
+            mistakes: [],
+            tip: "Usa le istruzioni specifiche della variante scelta."
         },
         "Lat Machine": {
             muscles: "Dorsali e bicipiti",
@@ -78,7 +86,7 @@ const ExerciseKnowledgeBase = {
         "Lat Machine presa neutra": {
             muscles: "Dorsali e bicipiti",
             keywords: ["lat machine presa neutra", "lat triangolo", "presa parallela"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/lat-machine-presa-neutra.jpg",
             execution: "Usa un'impugnatura neutra con i palmi rivolti uno verso l'altro. Tieni le cosce sotto i fermi e porta l'impugnatura verso la parte anteriore alta del torace, secondo la geometria dell'attrezzo, mantenendo il busto stabile e i gomiti orientati verso il basso.",
             mistakes: [
                 "Tirare solo con i bicipiti arrotondando le spalle",
@@ -155,7 +163,7 @@ const ExerciseKnowledgeBase = {
         "Shoulder Press": {
             muscles: "Spalle e tricipiti",
             keywords: ["shoulder press", "shoulder press macchina", "spinte spalle macchina"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/shoulder-press.jpg",
             execution: "Regola il sedile della shoulder press in modo che le impugnature siano raggiungibili senza forzare le spalle. Mantieni tronco e bacino stabili, spingi lungo la traiettoria della macchina e ritorna lentamente entro un'ampiezza confortevole.",
             mistakes: [
                 "Inarcare la schiena staccandola dallo schienale",
@@ -174,10 +182,10 @@ const ExerciseKnowledgeBase = {
             ],
             tip: "Mantieni il collo comodo e in linea con il busto; evita di iperestendere la zona lombare in chiusura."
         },
-        "Hack Squat / Leg Press": {
+        "Hack Squat": {
             muscles: "Quadricipiti e glutei",
             keywords: ["hack squat", "hack squat machine"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/hack-squat.jpg",
             execution: "Sulla macchina hack squat, appoggia schiena e spalle ai supporti e posiziona i piedi stabilmente sulla pedana. Scendi solo fin dove riesci a mantenere talloni appoggiati e bacino controllato, senza dolore. Risali spingendo con tutto il piede, senza bloccare forzatamente le ginocchia.",
             mistakes: [
                 "Alzare i talloni dalla pedana",
@@ -185,10 +193,18 @@ const ExerciseKnowledgeBase = {
             ],
             tip: "Mantieni il peso distribuito su tutto il piede (tripode: tallone, alluce, mignolo)."
         },
+        "Hack Squat / Leg Press": {
+            muscles: "Quadricipiti e glutei",
+            keywords: [],
+            image: null, // Immagine da verificare prima della pubblicazione
+            execution: "Scegli la macchina effettiva: per la leg press consulta la guida Leg Press; per l’hack squat consulta la guida Hack Squat.",
+            mistakes: [],
+            tip: "Usa le istruzioni specifiche della variante scelta."
+        },
         "Leg Extension": {
             muscles: "Quadricipiti",
             keywords: ["leg extension", "estensioni gambe"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/leg-extension.jpg",
             execution: "Regola la macchina in modo che il perno sia allineato con l'articolazione del ginocchio e il rullo appoggi sulla parte bassa della tibia, sopra la caviglia. Estendi le ginocchia in modo controllato entro un'ampiezza confortevole, senza scatti né blocco forzato, poi ritorna lentamente.",
             mistakes: [
                 "Dare uno strattone iniziale con i fianchi",
@@ -221,7 +237,7 @@ const ExerciseKnowledgeBase = {
         "Pallof Press": {
             muscles: "Addome e core",
             keywords: ["pallof", "pallof press", "anti-rotazione al cavo"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/pallof-press.jpg",
             execution: "Posizionati lateralmente rispetto al cavo regolato all'altezza dello sterno. Afferra la maniglia con entrambe le mani al centro del petto, distendi completamente le braccia in avanti resistendo alla rotazione del busto e ritorna.",
             mistakes: [
                 "Lasciare che il cavo ruoti il tronco o le spalle",
@@ -232,7 +248,7 @@ const ExerciseKnowledgeBase = {
         "Dead Bug": {
             muscles: "Addome e core",
             keywords: ["dead bug"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/dead-bug.jpg",
             execution: "Sdraiati supino con braccia rivolte verso il soffitto e anche e ginocchia flesse. Mantieni il tronco stabile e abbassa lentamente un braccio e la gamba opposta solo fin dove riesci a controllare il bacino e la posizione lombare senza dolore. Ritorna e alterna i lati; riduci l'ampiezza se perdi il controllo.",
             mistakes: [
                 "Perdere il controllo della posizione lombare durante l'allungamento",
@@ -243,7 +259,7 @@ const ExerciseKnowledgeBase = {
         "Plank rialzato": {
             muscles: "Addome e core",
             keywords: ["plank rialzato", "incline plank", "plank su panca"],
-            image: null, // Immagine da verificare prima della pubblicazione
+            image: "./assets/exercises/plank-rialzato.jpg",
             execution: "Appoggia gli avambracci o le mani su una panca stabile, corpo in linea dalla testa ai talloni. Contrai forte glutei e addome mantenendo la respirazione regolare.",
             mistakes: [
                 "Lasciar cadere il bacino verso il basso",
