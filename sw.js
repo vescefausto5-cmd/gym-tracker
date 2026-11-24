@@ -1,35 +1,51 @@
 /* =====================================
-   GYM TRACKER - SERVICE WORKER v39
+   GYM TRACKER - SERVICE WORKER v41
    CACHE OFFLINE COMPLETA
 ===================================== */
 
-const CACHE_NAME = "gym-tracker-v40";
+const CACHE_NAME = "gym-tracker-v41";
 
 const APP_FILES = [
     "./",
     "./index.html",
     "./style.css",
     "./app.js",
-    "./manifest.json",
+    "./manifest.json"
+];
+
+const OPTIONAL_FILES = [
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png",
     "./assets/icons/apple-touch-icon.png",
     "./assets/exercises/bicep-curl.jpg",
     "./assets/exercises/cable-row.jpg",
+    "./assets/exercises/chest-press-inclinata.jpg",
     "./assets/exercises/chest-press.jpg",
+    "./assets/exercises/croci-cavi.jpg",
+    "./assets/exercises/dead-bug.jpg",
+    "./assets/exercises/hack-squat.jpg",
     "./assets/exercises/hip-thrust.jpg",
+    "./assets/exercises/lat-machine-presa-neutra.jpg",
     "./assets/exercises/lat-machine.jpg",
     "./assets/exercises/lateral-raise.jpg",
     "./assets/exercises/leg-curl.jpg",
+    "./assets/exercises/leg-extension.jpg",
     "./assets/exercises/leg-press.jpg",
+    "./assets/exercises/pallof-press.jpg",
+    "./assets/exercises/panca-piana.jpg",
+    "./assets/exercises/plank-rialzato.jpg",
     "./assets/exercises/rdl-dumbbells.jpg",
+    "./assets/exercises/shoulder-press.jpg",
     "./assets/exercises/tricep-pushdown.jpg"
 ];
 
 self.addEventListener("install", event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => cache.addAll(APP_FILES))
+            .then(async cache => {
+                await cache.addAll(APP_FILES.map(path => new Request(path, {cache: "reload"})));
+                await Promise.allSettled(OPTIONAL_FILES.map(path => cache.add(path)));
+            })
             .then(() => self.skipWaiting())
     );
 });
@@ -63,7 +79,7 @@ self.addEventListener("fetch", event => {
             const response = await fetch(request);
             if (response && response.ok) {
                 const cache = await caches.open(CACHE_NAME);
-                cache.put(request, response.clone());
+                try { await cache.put(request, response.clone()); } catch (error) { console.warn("Cache:", error); }
             }
             return response;
         } catch {
