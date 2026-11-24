@@ -1,16 +1,19 @@
 /* =====================================
-   GYM TRACKER - SERVICE WORKER v39
+   GYM TRACKER - SERVICE WORKER v40
    CACHE OFFLINE COMPLETA
 ===================================== */
 
-const CACHE_NAME = "gym-tracker-v39";
+const CACHE_NAME = "gym-tracker-v40";
 
 const APP_FILES = [
     "./",
     "./index.html",
     "./style.css",
     "./app.js",
-    "./manifest.json",
+    "./manifest.json"
+];
+
+const OPTIONAL_FILES = [
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png",
     "./assets/icons/apple-touch-icon.png",
@@ -29,7 +32,10 @@ const APP_FILES = [
 self.addEventListener("install", event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => cache.addAll(APP_FILES))
+            .then(async cache => {
+                await cache.addAll(APP_FILES);
+                await Promise.allSettled(OPTIONAL_FILES.map(path => cache.add(path)));
+            })
             .then(() => self.skipWaiting())
     );
 });
@@ -61,7 +67,9 @@ self.addEventListener("fetch", event => {
             const response = await fetch(request);
             if (response && response.ok) {
                 const cache = await caches.open(CACHE_NAME);
-                cache.put(request, response.clone());
+                try { await cache.put(request, response.clone()); } catch (error) {
+                    console.warn("Cache non aggiornata:", error);
+                }
             }
             return response;
         } catch {
