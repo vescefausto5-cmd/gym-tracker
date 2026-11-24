@@ -1,9 +1,9 @@
 /* =====================================
-   GYM TRACKER - SERVICE WORKER v41
+   GYM TRACKER - SERVICE WORKER v42
    CACHE OFFLINE COMPLETA
 ===================================== */
 
-const CACHE_NAME = "gym-tracker-v41";
+const CACHE_NAME = "gym-tracker-v42";
 
 const APP_FILES = [
     "./",
@@ -31,6 +31,8 @@ const OPTIONAL_FILES = [
     "./assets/exercises/leg-curl.jpg",
     "./assets/exercises/leg-extension.jpg",
     "./assets/exercises/leg-press.jpg",
+    "./assets/exercises/low-row.jpg",
+    "./assets/exercises/machine-row.jpg",
     "./assets/exercises/pallof-press.jpg",
     "./assets/exercises/panca-piana.jpg",
     "./assets/exercises/plank-rialzato.jpg",
