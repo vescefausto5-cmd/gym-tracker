@@ -2220,6 +2220,24 @@ function createExerciseGuideElement(exerciseName) {
     const content = document.createElement("div");
     content.className = "guide-content";
 
+    for (const [label, value] of [
+        ["Muscoli principali", guide.muscles],
+        ["Muscoli secondari", guide.secondaryMuscles],
+        ["Attrezzatura", guide.equipment],
+        ["Respirazione", guide.breathing],
+        ["Stato guida", guide.reviewStatus === "draft" ? "Nuova guida tecnica: revisione individuale in corso." : null]
+    ]) {
+        if (!value) continue;
+        const section = document.createElement("div");
+        section.className = "guide-section";
+        const heading = document.createElement("strong");
+        heading.textContent = label;
+        const p = document.createElement("p");
+        p.textContent = value;
+        section.append(heading, p);
+        content.appendChild(section);
+    }
+
     const execSection = document.createElement("div");
     execSection.className = "guide-section";
     execSection.innerHTML = `<strong>Esecuzione corretta</strong><p>${guide.execution}</p>`;
