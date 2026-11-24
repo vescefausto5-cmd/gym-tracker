@@ -1276,7 +1276,7 @@ function updateNetworkStatus() {
     if (!dot || !label) return;
     if (navigator.onLine) {
         dot.classList.remove("offline");
-        label.textContent = "Pronto ad allenarti";
+        label.textContent = navigator.serviceWorker?.controller ? "Pronto anche offline" : "Online · cache in preparazione";
     } else {
         dot.classList.add("offline");
         label.textContent = "Modalità offline attiva";
@@ -1286,7 +1286,16 @@ function updateNetworkStatus() {
 function registerServiceWorker() {
     if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-            navigator.serviceWorker.register("./sw.js").catch(() => {});
+            navigator.serviceWorker.register("./sw.js")
+                .then(() => {
+                    navigator.serviceWorker.addEventListener("controllerchange", updateNetworkStatus);
+                    updateNetworkStatus();
+                })
+                .catch(error => {
+                    console.warn("Installazione offline non riuscita:", error);
+                    const label = document.getElementById("network-status");
+                    if (label) label.textContent = "Offline non ancora disponibile";
+                });
         });
     }
 }
