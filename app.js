@@ -477,7 +477,7 @@ function getLastSet(exerciseName) {
 function renderRoutine(routineKey, restoredWorkout = null, restoredRestEnd = null) {
     if (!defaultRoutines[routineKey]) return;
     currentRoutine = routineKey;
-    const baseRoutine = defaultRoutines[routineKey];
+    const baseRoutine = gymData.routines?.[routineKey] ? { name: "Scheda " + routineKey + " personalizzata", description: "Allenamento personalizzato", tip: "" } : defaultRoutines[routineKey];
     const exercisesList = getRoutineExercises(routineKey);
 
     if (restoredWorkout && Array.isArray(restoredWorkout)) {
@@ -489,6 +489,7 @@ function renderRoutine(routineKey, restoredWorkout = null, restoredRestEnd = nul
                 name: exercise.name,
                 muscles: exercise.muscles,
                 targetReps: exercise.reps,
+                restSeconds: exercise.restSeconds || DEFAULT_REST_SECONDS,
                 sets: Array.from({ length: exercise.sets }, () => ({
                     kg: lastSet ? lastSet.kg : "",
                     reps: "",
@@ -584,7 +585,7 @@ function removeExerciseFromCurrentRoutine(exerciseIndex) {
 
     currentWorkout.splice(exerciseIndex, 1);
     gymData.routines[currentRoutine] = currentWorkout.map(ex => ({
-        name: ex.name, muscles: ex.muscles, sets: ex.sets.length, reps: ex.targetReps || "10-12"
+        name: ex.name, muscles: ex.muscles, sets: ex.sets.length, reps: ex.targetReps || "10-12", restSeconds: ex.restSeconds || DEFAULT_REST_SECONDS
     }));
     saveGymData();
     persistActiveDraft();
@@ -684,7 +685,7 @@ function renderExercises() {
                     persistActiveDraft();
                     requestScreenWakeLock();
                     renderExercises();
-                    startRestTimer();
+                    startRestTimer(exercise.restSeconds || DEFAULT_REST_SECONDS);
                 } else {
                     set.completed = false;
                     persistActiveDraft();
@@ -762,7 +763,7 @@ function setupAddExerciseUI() {
         });
 
         gymData.routines[currentRoutine] = currentWorkout.map(ex => ({
-            name: ex.name, muscles: ex.muscles, sets: ex.sets.length, reps: ex.targetReps || "10-12"
+            name: ex.name, muscles: ex.muscles, sets: ex.sets.length, reps: ex.targetReps || "10-12", restSeconds: ex.restSeconds || DEFAULT_REST_SECONDS
         }));
         saveGymData();
         persistActiveDraft();
@@ -900,7 +901,7 @@ function finishWorkout() {
     const workout = {
         date: new Date().toISOString(),
         routine: currentRoutine,
-        name: defaultRoutines[currentRoutine].name,
+        name: gymData.routines?.[currentRoutine] ? "Scheda " + currentRoutine + " personalizzata" : defaultRoutines[currentRoutine].name,
         exercises: JSON.parse(JSON.stringify(currentWorkout))
     };
 
