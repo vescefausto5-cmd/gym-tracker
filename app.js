@@ -174,7 +174,7 @@ const ExerciseKnowledgeBase = {
             ],
             tip: "Mantieni il collo comodo e in linea con il busto; evita di iperestendere la zona lombare in chiusura."
         },
-        "Hack Squat / Leg Press": {
+        "Hack Squat": {
             muscles: "Quadricipiti e glutei",
             keywords: ["hack squat", "hack squat machine"],
             image: null, // Immagine da verificare prima della pubblicazione
@@ -182,6 +182,17 @@ const ExerciseKnowledgeBase = {
             mistakes: [
                 "Alzare i talloni dalla pedana",
                 "Staccare la zona lombare dallo schienale in buca"
+            ],
+            tip: "Mantieni il peso distribuito su tutto il piede (tripode: tallone, alluce, mignolo)."
+        },
+        "Hack Squat / Leg Press": {
+            muscles: "Quadricipiti e glutei",
+            keywords: [],
+            image: null, // Immagine da verificare prima della pubblicazione
+            execution: "Scegli una delle due macchine: hack squat oppure leg press. Nell’hack squat mantieni schiena e spalle sui supporti; nella leg press mantieni bacino e schiena sul sedile. In entrambi i casi regola i fermi di sicurezza, mantieni i piedi stabili e scendi entro un’ampiezza controllabile e senza dolore.",
+            mistakes: [
+                "Alzare i talloni dalla pedana",
+                "Perdere il controllo di bacino e schiena durante la discesa"
             ],
             tip: "Mantieni il peso distribuito su tutto il piede (tripode: tallone, alluce, mignolo)."
         },
@@ -521,7 +532,7 @@ function createExerciseGuideElement(exerciseName) {
     const summary = document.createElement("summary");
     summary.textContent = guide.matchedName && !guide.exact
         ? `Guida tecnica (riferimento: ${guide.matchedName})`
-        : "Guida esecuzione, immagine e consigli";
+        : guide.image ? "Guida esecuzione, immagine e consigli" : "Guida esecuzione e consigli";
     details.appendChild(summary);
 
     if (guide.image) {
