@@ -1,15 +1,16 @@
 /* =====================================
-   GYM TRACKER - SERVICE WORKER v42
+   GYM TRACKER - SERVICE WORKER v43
    CACHE OFFLINE COMPLETA
 ===================================== */
 
-const CACHE_NAME = "gym-tracker-v42";
+const CACHE_NAME = "gym-tracker-v43";
 
 const APP_FILES = [
     "./",
     "./index.html",
     "./style.css",
     "./app.js",
+    "./pdf-import.js",
     "./manifest.json"
 ];
 
@@ -73,7 +74,7 @@ self.addEventListener("fetch", event => {
 
     event.respondWith((async () => {
         const isAppShell = request.mode === "navigate" ||
-            /\/(?:index\.html|app\.js|style\.css|manifest\.json|sw\.js)$/.test(url.pathname);
+            /\/(?:index\.html|app\.js|pdf-import\.js|style\.css|manifest\.json|sw\.js)$/.test(url.pathname);
         const cached = await caches.match(request);
         if (!isAppShell && cached) return cached;
 
