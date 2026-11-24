@@ -1,9 +1,9 @@
 /* =====================================
-   GYM TRACKER - SERVICE WORKER v43
+   GYM TRACKER - SERVICE WORKER v44
    CACHE OFFLINE COMPLETA
 ===================================== */
 
-const CACHE_NAME = "gym-tracker-v43";
+const CACHE_NAME = "gym-tracker-v44";
 
 const APP_FILES = [
     "./",
